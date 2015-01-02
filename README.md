@@ -5,6 +5,22 @@ A fast TDD workflow with pry and rspec
 
 Inspired by Joel Turnbull's [Debugger Driven Development](https://www.youtube.com/watch?v=4hfMUP5iTq8)
 
+Usage
+---
+
+This is essentially just `pry-rescue` with a custom `fix` command.
+
+- Run `rescue rspec ./spec/my_class_spec.rb`
+- When one of your unit specs fails, a Pry console will open on the failing expectation.
+- Run the `fix` command in Pry to open the method body of the failing method
+
+- If the code is raising an exception, `fix` will open your editor at the line raising the exception.
+
+Recommended usage
+---
+
+For faster iterations, use [rspec-preloader](https://github.com/victormours/rspec-preloader).
+
 Install
 ---
 
@@ -19,22 +35,6 @@ group :development do
   gem 'pry-rspec'
 end
 ```
-
-Usage
----
-
-This is essentially just `pry-rescue` with a custom `fix` command.
-
-- run `rescue rspec ./spec/my_class_spec.rb`
-- When one of your unit specs fails, a Pry console will open on the failing expectation.
-- run the `fix` command in Pry to open the method body of the failing method
-
-- if the code is raising an exception, `fix` will open your editor at the line raising the exception.
-
-Recommended usage
----
-
-For faster iterations, use [rspec-preloader](github.com/victormours/rspec-preloader).
 
 Requirements
 ---
