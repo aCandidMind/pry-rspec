@@ -8,6 +8,6 @@ Pry::Commands.create_command "fix" do
     else
       run "edit -c"
     end
-    run "try-again"
+    run "continue"
   end
 end
